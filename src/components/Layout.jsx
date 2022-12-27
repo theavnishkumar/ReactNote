@@ -1,8 +1,10 @@
 import { makeStyles } from '@mui/styles'
 import React from 'react'
 import Drawer from '@mui/material/Drawer';
-import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
+import { List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
+import { AddCircleOutlineOutlined, SubjectOutlined } from '@mui/icons-material';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const drawerWidth=240
 const useStyles=makeStyles({
@@ -18,11 +20,29 @@ const useStyles=makeStyles({
     },
     root:{
       display: "flex"
+    },
+    active:{
+      background: '#f4f4f4'
     }
 })
 
 export default function Layout({children}) {
     const classes=useStyles();
+    const navigate=useNavigate();
+    const location=useLocation();
+
+    const menuItems=[
+      {
+        text: 'View Notes',
+        icon: <SubjectOutlined color='primary'/>,
+        path: '/notes'
+      },
+      {
+        text: 'Create Notes',
+        icon: <AddCircleOutlineOutlined color='primary'/>,
+        path: '/'
+      }
+    ]
   return (
     <div className={classes.root}>
 
@@ -36,13 +56,27 @@ export default function Layout({children}) {
         >
           <div>
             <Typography variant='h5'>
-              My Notes
+              Reaact Notes
             </Typography>
           </div>
+         
+         {/* {List/links} */}
+         <List>
+          {menuItems.map(item => (
+            <ListItem
+            key={item.text}
+            button onClick={()=> navigate(item.path)}
+            className={location.pathname === item.path ? classes.active:null}
+            >
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.text} />
+            </ListItem>
+          ))}
+         </List>
         </Drawer>
 
         <div className={classes.page}>
-      {children}
+      { children }
         </div>
     </div>
   )

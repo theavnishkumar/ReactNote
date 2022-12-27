@@ -27,14 +27,14 @@ function App() {
   return (
     <>
     <ThemeProvider theme={theme}>
-        <Layout>
    <Router>
+        <Layout>
             <Routes>
              <Route exact path="/" element={<Create/>}></Route>
              <Route path="/notes" element={<Notes/>}></Route> 
             </Routes>
-  </Router>
         </Layout>
+  </Router>
 
     </ThemeProvider>
     </>
