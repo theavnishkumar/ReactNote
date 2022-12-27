@@ -26,8 +26,8 @@ export default function Notes() {
 
     const breakpoints={
         default: 3,
-        1100: 2,
-        700: 1
+        1200: 2,
+        850: 1
     }
   return (
     <div>
@@ -38,7 +38,7 @@ export default function Notes() {
         columnClassName="my-masonry-grid_column"
         >
         {notes.map(notes=>(
-            <div item key={notes.id} xs={12} md={6} lg={4}>
+            <div item key={notes.id}>
                 <NoteCard note={notes} handleDelete={handleDelete}/>
             </div>
             ))}
