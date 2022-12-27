@@ -6,12 +6,17 @@ import { makeStyles } from "@mui/styles";
 import TextField from "@mui/material/TextField";
 import Radio from '@mui/material/Radio';
 import { FormControlLabel, RadioGroup, FormControl, FormLabel } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles({
   field: {
     marginTop: 20,
     marginBottom: "block",
   },
+  css:{
+    margin: 5,
+    display: "block"
+  }
 });
 
 export default function Create() {
@@ -23,7 +28,9 @@ export default function Create() {
   const [titleError, setTitleError]=useState(false);
   const [detailsError, setDetailsError]=useState(false);
 
-  const [category, setCategory] = useState('todos')
+  const [category, setCategory] = useState('todos');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,13 +42,17 @@ export default function Create() {
     if(details == ''){setDetailsError(true)}
 
     if (title && details) {
-      console.log(title, details, category);
+      fetch('http://localhost:8000/notes',{
+        method:'POST',
+        headers: {"Content-type":"application/json"},
+        body: JSON.stringify({title,details,category})
+      }).then(()=> navigate('/'))
     }
-  };
+  }
   return (
     <div>
       <Typography
-        className={classes.title}
+        className={classes.css}
         variant="h6"
         component="h2"
         gutterBottom
@@ -56,7 +67,7 @@ export default function Create() {
           className={classes.field}
           label="Note Title"
           variant="outlined"
-          color="secondary"
+          color="primary"
           fullWidth
           required
           error={titleError}
@@ -67,7 +78,7 @@ export default function Create() {
           className={classes.field}
           label="Details"
           variant="outlined"
-          color="secondary"
+          color="primary"
           multiline
           rows={4}
           fullWidth
@@ -83,7 +94,7 @@ export default function Create() {
           <FormControlLabel value="remainders" control={<Radio/>} label="Remainder" />
           <FormControlLabel value="work" control={<Radio/>} label="Work" />
         </RadioGroup>
-        </FormControl>
+        </FormControl><br/>
 
         <Button
           type="submit"
