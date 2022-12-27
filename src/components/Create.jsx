@@ -12,13 +12,14 @@ import { Container } from '@mui/system';
 const useStyles = makeStyles({
   field: {
     marginTop: 20,
-    marginBottom: "block",
+    marginBottom: 20,
+    display: 'block'
   },
   css:{
     margin: 5,
-    display: "block"
+    display: 'block'
   }
-});
+})
 
 export default function Create() {
   const classes = useStyles();
@@ -88,7 +89,7 @@ export default function Create() {
           error={detailsError}
         ></TextField>
 
-        <FormControl className="classes.field">
+        <FormControl className={classes.field}>
         <FormLabel>Note Category</FormLabel>
           <RadioGroup value={category} onChange={(e)=> setCategory(e.target.value)}>
           <FormControlLabel value="money" control={<Radio/>} label="Money" />
