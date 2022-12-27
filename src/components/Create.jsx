@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import Radio from '@mui/material/Radio';
 import { FormControlLabel, RadioGroup, FormControl, FormLabel } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Container } from '@mui/system';
 
 const useStyles = makeStyles({
   field: {
@@ -51,6 +52,7 @@ export default function Create() {
   }
   return (
     <div>
+      <Container>
       <Typography
         className={classes.css}
         variant="h6"
@@ -105,6 +107,7 @@ export default function Create() {
           Submit
         </Button>
       </form>
+      </Container>
     </div>
   );
 }
