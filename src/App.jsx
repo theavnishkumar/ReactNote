@@ -9,7 +9,7 @@ import { fontWeight } from "@mui/system";
 const theme=createTheme({
   palette: {
     primary: {
-      main: '#fefefe'
+      main: '#1565c0'
     },
     secondary: purple
   },
@@ -26,7 +26,7 @@ const theme=createTheme({
 function App() {
   return (
     <>
-    <div className='container'>
+    <div>
     <ThemeProvider theme={theme}>
    <Router>
             <Routes>
