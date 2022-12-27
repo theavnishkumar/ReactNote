@@ -7,7 +7,7 @@ import { AddCircleOutlineOutlined, SubjectOutlined } from '@mui/icons-material';
 import NoteAddOutlinedIcon from '@mui/icons-material/NoteAddOutlined';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const drawerWidth=240
+const drawerWidth=220
 const useStyles=makeStyles({
     page:{
         background: '#f9f9f9',
@@ -16,13 +16,13 @@ const useStyles=makeStyles({
     drawer: {
       width: drawerWidth
     },
-    drawerPaper:{
+    drawerPaper: {
       width: drawerWidth
     },
-    root:{
-      display: "flex"
+    root: {
+      display: 'flex'
     },
-    active:{
+    active: {
       background: '#f4f4f4'
     }
 })
@@ -36,12 +36,12 @@ export default function Layout({children}) {
       {
         text: 'View Notes',
         icon: <SubjectOutlined color='primary'/>,
-        path: '/notes'
+        path: '/'
       },
       {
         text: 'Create Notes',
         icon: <AddCircleOutlineOutlined color='primary'/>,
-        path: '/'
+        path: '/create'
       }
     ]
   return (
@@ -65,9 +65,10 @@ export default function Layout({children}) {
          <List>
           {menuItems.map(item => (
             <ListItem
+            button 
             key={item.text}
-            button onClick={()=> navigate(item.path)}
-            className={location.pathname === item.path ? classes.active:null}
+            onClick={()=> navigate(item.path)}
+            className={location.pathname==item.path?classes.active:null}
             >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />

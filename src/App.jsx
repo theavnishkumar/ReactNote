@@ -30,8 +30,8 @@ function App() {
    <Router>
         <Layout>
             <Routes>
-             <Route exact path="/" element={<Create/>}></Route>
-             <Route path="/notes" element={<Notes/>}></Route> 
+             <Route exact path="/create" element={<Create/>}></Route>
+             <Route path="/" element={<Notes/>}></Route> 
             </Routes>
         </Layout>
   </Router>
