@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import Grid from '@mui/material/Grid';
 import { Container } from '@mui/system';
 import NoteCard from './NoteCard';
 import Masonry from 'react-masonry-css';
-
 
 export default function Notes() {
     const [notes, setNotes]=useState([])
@@ -38,7 +36,7 @@ export default function Notes() {
         columnClassName="my-masonry-grid_column"
         >
         {notes.map(notes=>(
-            <div item key={notes.id}>
+            <div key={notes.id}>
                 <NoteCard note={notes} handleDelete={handleDelete}/>
             </div>
             ))}
