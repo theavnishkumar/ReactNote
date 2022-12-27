@@ -34,7 +34,7 @@ const useStyles=makeStyles((theme)=>{
       padding: theme.spacing(2)
     },
     appbar: {
-      width: `calc(100% - ${drawerWidth}px)`
+      width: `calc(100% - ${drawerWidth}px)!important`
     },
     toolbar: theme.mixins.toolbar,
     date:{
