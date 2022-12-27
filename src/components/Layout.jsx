@@ -4,6 +4,7 @@ import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
 import { List, ListItem, ListItemIcon, ListItemText} from '@mui/material';
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@mui/icons-material';
+import NoteAddOutlinedIcon from '@mui/icons-material/NoteAddOutlined';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const drawerWidth=240
@@ -55,8 +56,8 @@ export default function Layout({children}) {
         classes={{paper:classes.drawerPaper}}
         >
           <div>
-            <Typography variant='h5'>
-              Reaact Notes
+            <Typography variant='h5' color="primary" align="center">
+              <NoteAddOutlinedIcon/>Reaact Notes
             </Typography>
           </div>
          
