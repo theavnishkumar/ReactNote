@@ -1,34 +1,3 @@
 {
-  "notes": [
-    {
-      "title": "His Birthday",
-      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita pariatur praesentium eius cupiditate perferendis vel distinctio adipisci sit voluptatum placeat dolorum suscipit ipsum nesciunt quas voluptatem quisquam, numquam nobis illum! Corrupti, culpa ipsum, distinctio quisquam doloremque numquam rem blanditiis nostrum quaerat iure accusantium, dolores natus aut possimus provident! Quae, obcaecati.",
-      "category": "remainders",
-      "id": 1
-    },
-    {
-      "title": "Buy iPhone",
-      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita pariatur praesentium eius cupiditate perferendis vel distinctio adipisci sit voluptatum placeat dolorum suscipit ipsum nesciunt quas voluptatem quisquam, numquam nobis illum! Corrupti, culpa ipsum, distinctio quisquam doloremque numquam rem blanditiis nostrum quaerat iure accusantium, dolores natus aut possimus provident! Quae, obcaecati.",
-      "category": "work",
-      "id": 2
-    },
-    {
-      "title": "Coding",
-      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita pariatur praesentium eius cupiditate perferendis vel distinctio adipisci sit voluptatum placeat dolorum suscipit ipsum nesciunt quas voluptatem quisquam, numquam nobis illum! Corrupti, culpa ipsum, distinctio quisquam doloremque numquam rem blanditiis nostrum quaerat iure accusantium, dolores natus aut possimus provident! Quae, obcaecati.",
-      "category": "todos",
-      "id": 3
-    },
-    {
-      "title": "Food",
-      "details": "Buy Food From Super Market",
-      "category": "remainders",
-      "id": 4
-    },
-    {
-      "title": "Return Book",
-      "details": "Return College Book on Time",
-      "category": "remainders",
-      "id": 5
-    }
-  ]
+  "notes": []
 }
